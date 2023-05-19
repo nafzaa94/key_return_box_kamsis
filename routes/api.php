@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\ApicardController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/getonedata/{cardnumber}', [ApicardController::class, 'getonedata']);
+
+Route::get('/updatestatus/{cardnumber}', [ApicardController::class, 'updatestatus']);
